@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4wg5jlrr5piu"]
+
+[ext_resource type="Texture2D" uid="uid://coa34e7l35u2l" path="res://art/blocks/block.png" id="1_cs8y1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsmtu"]
+
+[node name="4LPiece" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block" type="Sprite2D" parent="."]
+modulate = Color(1, 0.752941, 0.329412, 1)
+texture_filter = 1
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_cs8y1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(7.62939e-06, 40)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block5" type="Sprite2D" parent="."]
+modulate = Color(1, 0.752941, 0.329412, 1)
+texture_filter = 1
+position = Vector2(0, 40)
+scale = Vector2(5, 5)
+texture = ExtResource("1_cs8y1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-40, -40)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block2" type="Sprite2D" parent="."]
+modulate = Color(1, 0.752941, 0.329412, 1)
+texture_filter = 1
+position = Vector2(-40, -40)
+scale = Vector2(5, 5)
+texture = ExtResource("1_cs8y1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(40, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block3" type="Sprite2D" parent="."]
+modulate = Color(1, 0.752941, 0.329412, 1)
+texture_filter = 1
+position = Vector2(40, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_cs8y1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-40, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block4" type="Sprite2D" parent="."]
+modulate = Color(1, 0.752941, 0.329412, 1)
+texture_filter = 1
+position = Vector2(-40, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_cs8y1")
+metadata/_edit_group_ = true

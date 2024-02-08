@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsq8vhgj84oxf"]
+
+[ext_resource type="FontFile" uid="uid://sk6gob6i14a8" path="res://art/fonts/C&C Red Alert [INET].ttf" id="1_2x4ic"]
+
+[node name="HighScoreControl" type="Control"]
+custom_minimum_size = Vector2(585, 50)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="UsernameLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 115.0
+offset_top = 4.0
+offset_right = 470.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.298039, 0.407843, 0.219608)
+theme_override_fonts/font = ExtResource("1_2x4ic")
+theme_override_font_sizes/font_size = 40
+text = "Username here"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 205.0
+offset_top = 4.0
+offset_right = 560.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.298039, 0.407843, 0.219608)
+theme_override_fonts/font = ExtResource("1_2x4ic")
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 2
+
+[node name="RankLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = -252.0
+offset_top = 4.0
+offset_right = 103.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.298039, 0.407843, 0.219608)
+theme_override_fonts/font = ExtResource("1_2x4ic")
+theme_override_font_sizes/font_size = 40
+text = "10."
+horizontal_alignment = 2

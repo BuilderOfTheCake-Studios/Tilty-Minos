@@ -1,0 +1,117 @@
+[gd_scene load_steps=19 format=3 uid="uid://ce13spnknsnbx"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_5y5wb"]
+[ext_resource type="FontFile" uid="uid://sk6gob6i14a8" path="res://art/fonts/C&C Red Alert [INET].ttf" id="1_7mkak"]
+[ext_resource type="Texture2D" uid="uid://bv2ybm37lb50b" path="res://art/menu/tilty_token.png" id="2_d1inf"]
+[ext_resource type="PackedScene" uid="uid://dqeo8h7hqipo5" path="res://shopitems/checker.tscn" id="2_p0mfh"]
+[ext_resource type="PackedScene" uid="uid://bawmdbro7f5vv" path="res://shopitems/circle.tscn" id="3_twrkm"]
+[ext_resource type="PackedScene" uid="uid://ysosdcc2xna0" path="res://shopitems/classic.tscn" id="4_7rlmr"]
+[ext_resource type="PackedScene" uid="uid://crc5w6556d7mq" path="res://shopitems/glass.tscn" id="5_uurht"]
+[ext_resource type="Script" path="res://BlockContainer.gd" id="5_xppc0"]
+[ext_resource type="PackedScene" uid="uid://ecrk7tfqdu1m" path="res://shopitems/grate.tscn" id="6_w60y2"]
+[ext_resource type="PackedScene" uid="uid://cov5aqpcu5uot" path="res://shopitems/half_slab.tscn" id="7_dqy1h"]
+[ext_resource type="PackedScene" uid="uid://d1vnhf5gk05qv" path="res://shopitems/pixel.tscn" id="8_plvia"]
+[ext_resource type="PackedScene" uid="uid://di1wjouiyo3sf" path="res://shopitems/plain.tscn" id="9_vubmd"]
+[ext_resource type="PackedScene" uid="uid://ddqsiu0wg153h" path="res://shopitems/standard.tscn" id="10_pd3jp"]
+[ext_resource type="PackedScene" uid="uid://5eh8xjk4qtyq" path="res://shopitems/tricolor.tscn" id="11_sfy3d"]
+[ext_resource type="Texture2D" uid="uid://bp8hcu4fnqtq1" path="res://art/menu/back button.png" id="11_t2ns6"]
+[ext_resource type="PackedScene" uid="uid://3vcvgc3fkbai" path="res://shopitems/window.tscn" id="12_ogkyn"]
+[ext_resource type="PackedScene" uid="uid://cir6mdcxnur8g" path="res://shopitems/xblock.tscn" id="13_jl4de"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38aln"]
+size = Vector2(16, 16)
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5y5wb")
+shop_items = Array[PackedScene]([ExtResource("10_pd3jp"), ExtResource("9_vubmd"), ExtResource("3_twrkm"), ExtResource("4_7rlmr"), ExtResource("5_uurht"), ExtResource("6_w60y2"), ExtResource("7_dqy1h"), ExtResource("8_plvia"), ExtResource("11_sfy3d"), ExtResource("12_ogkyn"), ExtResource("13_jl4de"), ExtResource("2_p0mfh")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.117647, 0.188235, 1)
+
+[node name="BackButton" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(11, 68.72)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("11_t2ns6")
+shape = SubResource("RectangleShape2D_38aln")
+action = "back"
+
+[node name="TokenControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TokenLabel" type="Label" parent="TokenControl"]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 99.0
+offset_right = 82.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.772549, 0.772549, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.235294, 0.317647, 0.196078)
+theme_override_fonts/font = ExtResource("1_7mkak")
+theme_override_font_sizes/font_size = 45
+text = "0000.0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TokenIcon" type="Sprite2D" parent="TokenControl"]
+texture_filter = 1
+position = Vector2(-46.9999, 121)
+scale = Vector2(5, 5)
+texture = ExtResource("2_d1inf")
+
+[node name="ShopLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.0
+offset_top = 27.0
+offset_right = 204.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.298039, 0.407843, 0.219608)
+theme_override_fonts/font = ExtResource("1_7mkak")
+theme_override_font_sizes/font_size = 70
+text = "The Tilty Shop
+"
+horizontal_alignment = 1
+
+[node name="ShopScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(0, 868.47)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+scroll_deadzone = -1000
+script = ExtResource("5_xppc0")
+
+[node name="ShopControl" type="Control" parent="ShopScrollContainer"]
+custom_minimum_size = Vector2(600, 2000)
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 1

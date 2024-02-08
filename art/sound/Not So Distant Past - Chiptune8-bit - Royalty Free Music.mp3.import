@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yjwwjgw7bjw7"
+path="res://.godot/imported/Not So Distant Past - Chiptune8-bit - Royalty Free Music.mp3-c8173456b53f097568045f8dad1a39c0.mp3str"
+
+[deps]
+
+source_file="res://art/sound/Not So Distant Past - Chiptune8-bit - Royalty Free Music.mp3"
+dest_files=["res://.godot/imported/Not So Distant Past - Chiptune8-bit - Royalty Free Music.mp3-c8173456b53f097568045f8dad1a39c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

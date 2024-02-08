@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uvv8k16jtg1f"
+path="res://.godot/imported/Vibe Mountain.mp3-695c726f76e78743d981ecb8f1c1aacf.mp3str"
+
+[deps]
+
+source_file="res://art/sound/Vibe Mountain.mp3"
+dest_files=["res://.godot/imported/Vibe Mountain.mp3-695c726f76e78743d981ecb8f1c1aacf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

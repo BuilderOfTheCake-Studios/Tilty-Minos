@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://cir6mdcxnur8g"]
+
+[ext_resource type="Script" path="res://shopitems/shopitem.gd" id="1_muu6f"]
+[ext_resource type="Texture2D" uid="uid://dvi71pr10vseu" path="res://art/blocks/block_x.png" id="2_x12nf"]
+[ext_resource type="FontFile" uid="uid://sk6gob6i14a8" path="res://art/fonts/C&C Red Alert [INET].ttf" id="3_106mf"]
+[ext_resource type="Texture2D" uid="uid://coa34e7l35u2l" path="res://art/blocks/block.png" id="4_5sele"]
+[ext_resource type="Texture2D" uid="uid://bv2ybm37lb50b" path="res://art/menu/tilty_token.png" id="5_cs2t7"]
+
+[node name="XBlock" type="Control"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_muu6f")
+block_name = "X Block"
+block_icon = ExtResource("2_x12nf")
+price = 200
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0.137255)
+
+[node name="BlockLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 86.0
+offset_top = -47.53
+offset_right = 496.0
+offset_bottom = 26.47
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.298039, 0.407843, 0.219608)
+theme_override_fonts/font = ExtResource("3_106mf")
+theme_override_font_sizes/font_size = 50
+text = "Block Name"
+vertical_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 109.0
+offset_top = -17.0
+offset_right = 519.0
+offset_bottom = 57.0
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.298039, 0.407843, 0.219608)
+theme_override_fonts/font = ExtResource("3_106mf")
+theme_override_font_sizes/font_size = 35
+text = "Price"
+vertical_alignment = 1
+
+[node name="BlockIcon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(45, 49.47)
+scale = Vector2(5, 5)
+texture = ExtResource("4_5sele")
+
+[node name="TokenIcon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(96, 69.47)
+scale = Vector2(3, 3)
+texture = ExtResource("5_cs2t7")
+
+[node name="BuyButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 28.47
+offset_right = 501.0
+offset_bottom = 72.47
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_106mf")
+theme_override_font_sizes/font_size = 35
+disabled = true
+text = "Buy"
+
+[node name="UseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 28.47
+offset_right = 573.0
+offset_bottom = 72.47
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_106mf")
+theme_override_font_sizes/font_size = 35
+toggle_mode = true
+text = "Use
+"
+
+[connection signal="pressed" from="UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="toggled" from="UseButton" to="." method="_on_use_button_toggled"]

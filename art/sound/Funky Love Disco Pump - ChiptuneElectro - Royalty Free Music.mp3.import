@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwglnxl3vcgxg"
+path="res://.godot/imported/Funky Love Disco Pump - ChiptuneElectro - Royalty Free Music.mp3-63a3eb0201cce7eab16346867c24f127.mp3str"
+
+[deps]
+
+source_file="res://art/sound/Funky Love Disco Pump - ChiptuneElectro - Royalty Free Music.mp3"
+dest_files=["res://.godot/imported/Funky Love Disco Pump - ChiptuneElectro - Royalty Free Music.mp3-63a3eb0201cce7eab16346867c24f127.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

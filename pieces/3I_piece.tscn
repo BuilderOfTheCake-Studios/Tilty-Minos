@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct8xyrn5uor0"]
+
+[ext_resource type="Texture2D" uid="uid://coa34e7l35u2l" path="res://art/blocks/block.png" id="1_jwll7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsmtu"]
+
+[node name="3I Piece" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-40, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 0.662745, 0.811765, 1)
+texture_filter = 1
+position = Vector2(-40, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_jwll7")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(7.62939e-06, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block2" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 0.662745, 0.811765, 1)
+texture_filter = 1
+position = Vector2(7.62939e-06, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_jwll7")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(40, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_dsmtu")
+
+[node name="Block3" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 0.662745, 0.811765, 1)
+texture_filter = 1
+position = Vector2(40, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_jwll7")
+metadata/_edit_group_ = true

@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+~/android
+/android
+.godot/
+*.exe
+*.apk
+*.aab
+*.aar
+ParallaxBackground.gd

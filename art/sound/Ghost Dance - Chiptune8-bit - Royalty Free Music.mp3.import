@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://25cwbdrawmhs"
+path="res://.godot/imported/Ghost Dance - Chiptune8-bit - Royalty Free Music.mp3-6ac8a3fadc80a2b4836a04d4d17500cf.mp3str"
+
+[deps]
+
+source_file="res://art/sound/Ghost Dance - Chiptune8-bit - Royalty Free Music.mp3"
+dest_files=["res://.godot/imported/Ghost Dance - Chiptune8-bit - Royalty Free Music.mp3-6ac8a3fadc80a2b4836a04d4d17500cf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

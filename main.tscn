@@ -1,0 +1,118 @@
+[gd_scene load_steps=18 format=3 uid="uid://bgblqioxxboyr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_csam0"]
+[ext_resource type="PackedScene" uid="uid://cvancw8qu8hwf" path="res://game.tscn" id="22_ls8n8"]
+[ext_resource type="Texture2D" uid="uid://qsskd87nbrg" path="res://art/menu/button menu left.png" id="31_vnug0"]
+[ext_resource type="Texture2D" uid="uid://p62m06kuff2b" path="res://art/menu/button menu left pressed.png" id="32_d53mh"]
+[ext_resource type="Texture2D" uid="uid://dqocs7651nkn6" path="res://art/menu/button menu.png" id="33_jovkx"]
+[ext_resource type="Texture2D" uid="uid://bfclojvw4po0m" path="res://art/menu/button menu right.png" id="34_60mhe"]
+[ext_resource type="Texture2D" uid="uid://bnbe8ls0ndrjf" path="res://art/menu/button menu right pressed.png" id="35_2kyfv"]
+[ext_resource type="Texture2D" uid="uid://c3daunr6it3yl" path="res://art/menu/button menu left rotate.png" id="36_h6i8w"]
+[ext_resource type="Texture2D" uid="uid://buxbto73u1mrc" path="res://art/menu/button menu left rotate pressed.png" id="37_pu3bf"]
+[ext_resource type="Texture2D" uid="uid://bjc61o4jfwr42" path="res://art/menu/button menu right rotate.png" id="38_s2gyy"]
+[ext_resource type="Texture2D" uid="uid://br4xsnga3may4" path="res://art/menu/button menu right rotate pressed.png" id="39_p1bbp"]
+[ext_resource type="Texture2D" uid="uid://cxupgbl4d3u8j" path="res://art/menu/button menu down.png" id="40_vksug"]
+[ext_resource type="Texture2D" uid="uid://dk7tcot3hjmtr" path="res://art/menu/button menu down pressed.png" id="41_m3jxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx00k"]
+size = Vector2(25, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8o4e"]
+size = Vector2(25, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubg2n"]
+size = Vector2(25, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wnjy"]
+size = Vector2(115, 8)
+
+[node name="Main" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_csam0")
+
+[node name="MobileUILayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="MobileControls" type="Control" parent="MobileUILayer"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 40.0
+offset_bottom = -160.0
+grow_vertical = 0
+scale = Vector2(5, 5)
+size_flags_vertical = 8
+
+[node name="ColorRect" type="ColorRect" parent="MobileUILayer/MobileControls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 1)
+color = Color(0.207843, 0.243137, 0.321569, 1)
+
+[node name="LeftButton" type="TouchScreenButton" parent="MobileUILayer/MobileControls"]
+position = Vector2(0.2, 0)
+texture_normal = ExtResource("31_vnug0")
+texture_pressed = ExtResource("32_d53mh")
+shape = SubResource("RectangleShape2D_vx00k")
+action = "move_left"
+
+[node name="Sprite2D" type="Sprite2D" parent="MobileUILayer/MobileControls"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(60.2, 20)
+texture = ExtResource("33_jovkx")
+
+[node name="RightButton" type="TouchScreenButton" parent="MobileUILayer/MobileControls"]
+position = Vector2(90.2, 0)
+texture_normal = ExtResource("34_60mhe")
+texture_pressed = ExtResource("35_2kyfv")
+shape = SubResource("RectangleShape2D_c8o4e")
+action = "move_right"
+
+[node name="LeftRotateButton" type="TouchScreenButton" parent="MobileUILayer/MobileControls"]
+position = Vector2(28.2, 0)
+texture_normal = ExtResource("36_h6i8w")
+texture_pressed = ExtResource("37_pu3bf")
+shape = SubResource("RectangleShape2D_ubg2n")
+action = "rotate_left"
+
+[node name="RightRotateButton" type="TouchScreenButton" parent="MobileUILayer/MobileControls"]
+position = Vector2(62.2, 0)
+texture_normal = ExtResource("38_s2gyy")
+texture_pressed = ExtResource("39_p1bbp")
+shape = SubResource("RectangleShape2D_ubg2n")
+action = "rotate_right"
+
+[node name="QuickDropButton" type="TouchScreenButton" parent="MobileUILayer/MobileControls"]
+position = Vector2(0.2, 27.8)
+texture_normal = ExtResource("40_vksug")
+texture_pressed = ExtResource("41_m3jxm")
+shape = SubResource("RectangleShape2D_3wnjy")
+action = "quick_drop"
+
+[node name="GameViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 512.0
+offset_bottom = 512.0
+size_flags_vertical = 0
+
+[node name="GameViewport" type="SubViewport" parent="GameViewportContainer"]
+handle_input_locally = false
+msaa_2d = 3
+screen_space_aa = 1
+use_taa = true
+use_debanding = true
+use_occlusion_culling = true
+audio_listener_enable_2d = true
+size = Vector2i(600, 800)
+render_target_update_mode = 4
+
+[node name="Game" parent="GameViewportContainer/GameViewport" instance=ExtResource("22_ls8n8")]
+
+[connection signal="game_ended" from="GameViewportContainer/GameViewport/Game" to="." method="_on_game_game_ended"]
+[connection signal="game_started" from="GameViewportContainer/GameViewport/Game" to="." method="_on_game_game_started"]
